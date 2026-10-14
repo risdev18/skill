@@ -87,24 +87,24 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090D16] py-12 px-4 sm:px-6 flex justify-center items-center">
-      <div className="w-full max-w-2xl bg-[#0F1626] border border-white/10 rounded-2xl shadow-2xl p-6 sm:p-8">
+    <div className="min-h-screen bg-[#FBFBFA] py-12 px-4 sm:px-6 flex justify-center items-center">
+      <div className="w-full max-w-2xl bg-white border border-slate-200/90 rounded-2xl shadow-sm p-6 sm:p-8">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 group mb-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-600/30 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center shadow-xs shadow-indigo-600/30 group-hover:scale-105 transition-transform">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
-            <span className="text-2xl font-black text-white tracking-tight">SkillSync</span>
+            <span className="text-2xl font-black text-slate-900 tracking-tight">SkillSync</span>
           </Link>
-          <h2 className="text-xl font-bold text-white tracking-tight">Create Student Profile</h2>
-          <p className="text-xs text-slate-400 mt-1">Declare your skills and find the right teammates</p>
+          <h2 className="text-xl font-bold text-slate-900 tracking-tight">Create Student Profile</h2>
+          <p className="text-xs text-slate-600 mt-1">Declare your skills and find the right teammates</p>
         </div>
 
         {isDemoMode && (
-          <div className="mb-6 p-3 bg-indigo-500/10 border border-indigo-500/20 rounded-xl text-xs text-slate-300 flex items-center gap-2">
-            <Info className="w-4 h-4 text-indigo-400 shrink-0" />
+          <div className="mb-6 p-3.5 bg-indigo-50 border border-indigo-200 rounded-xl text-xs text-slate-700 flex items-center gap-2">
+            <Info className="w-4 h-4 text-indigo-600 shrink-0" />
             <span>
-              <strong>Demo Storage Active:</strong> Profiles created here persist in browser storage and can be matched against all projects.
+              <strong className="text-slate-900">Demo Storage Active:</strong> Profiles created here persist in browser storage and can be matched against all projects.
             </span>
           </div>
         )}
@@ -112,7 +112,7 @@ export default function RegisterPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Full Name *
               </label>
               <input
@@ -121,12 +121,12 @@ export default function RegisterPage() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="e.g. Jordan Lee"
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 University Email *
               </label>
               <input
@@ -135,14 +135,14 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="jordan.lee@college.edu"
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 College / University *
               </label>
               <input
@@ -151,12 +151,12 @@ export default function RegisterPage() {
                 value={college}
                 onChange={(e) => setCollege(e.target.value)}
                 placeholder="e.g. University of Washington"
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Department
               </label>
               <input
@@ -164,18 +164,18 @@ export default function RegisterPage() {
                 value={department}
                 onChange={(e) => setDepartment(e.target.value)}
                 placeholder="e.g. Computer Science"
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Academic Year
               </label>
               <select
                 value={academicYear}
                 onChange={(e) => setAcademicYear(e.target.value as any)}
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
               >
                 <option value="1st Year">1st Year</option>
                 <option value="2nd Year">2nd Year</option>
@@ -187,7 +187,7 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Short Bio
             </label>
             <textarea
@@ -195,13 +195,13 @@ export default function RegisterPage() {
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               placeholder="What kind of engineering systems are you eager to build?"
-              className="w-full px-3.5 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 resize-none"
+              className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 resize-none font-medium leading-relaxed"
             />
           </div>
 
           {/* Technical Skills Declaration */}
-          <div className="p-4 rounded-xl bg-black/30 border border-white/5 space-y-3">
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider">
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
               Technical Skills & Verified Proficiency *
             </label>
 
@@ -209,16 +209,16 @@ export default function RegisterPage() {
               {skills.map((s, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs text-slate-900 shadow-xs"
                 >
-                  <span className="font-medium">{s.skillName}</span>
-                  <span className="text-[10px] text-indigo-400 font-mono">
+                  <span className="font-semibold">{s.skillName}</span>
+                  <span className="text-[10px] text-indigo-600 font-mono">
                     ({s.proficiency === 1 ? "Beginner" : s.proficiency === 2 ? "Intermediate" : "Advanced"})
                   </span>
                   <button
                     type="button"
                     onClick={() => handleRemoveSkill(index)}
-                    className="text-slate-400 hover:text-rose-400 ml-1"
+                    className="text-slate-400 hover:text-rose-600 ml-1"
                   >
                     <Trash2 className="w-3 h-3" />
                   </button>
@@ -232,12 +232,12 @@ export default function RegisterPage() {
                 value={newSkillName}
                 onChange={(e) => setNewSkillName(e.target.value)}
                 placeholder="Skill name (e.g. Next.js, C++, PyTorch)"
-                className="flex-1 px-3 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="flex-1 px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500"
               />
               <select
                 value={newSkillProf}
                 onChange={(e) => setNewSkillProf(Number(e.target.value) as SkillProficiency)}
-                className="px-3 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
               >
                 <option value={1}>1 - Beginner</option>
                 <option value={2}>2 - Intermediate</option>
@@ -246,7 +246,7 @@ export default function RegisterPage() {
               <button
                 type="button"
                 onClick={handleAddSkill}
-                className="px-3 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold flex items-center gap-1"
+                className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold flex items-center gap-1 shadow-xs"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add</span>
@@ -256,13 +256,13 @@ export default function RegisterPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Availability
               </label>
               <select
                 value={availability}
                 onChange={(e) => setAvailability(e.target.value as any)}
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
               >
                 <option value="15+ hrs/week">15+ hrs/week (High Velocity)</option>
                 <option value="10-15 hrs/week">10-15 hrs/week (Standard)</option>
@@ -273,7 +273,7 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 GitHub URL
               </label>
               <input
@@ -281,25 +281,25 @@ export default function RegisterPage() {
                 value={githubUrl}
                 onChange={(e) => setGithubUrl(e.target.value)}
                 placeholder="https://github.com/username"
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
               />
             </div>
           </div>
 
           {error && (
-            <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-400 flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 shrink-0" />
+            <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-700 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
               <span>{error}</span>
             </div>
           )}
 
-          <div className="flex items-center justify-between pt-4 border-t border-white/10">
-            <Link href="/login" className="text-xs text-slate-400 hover:text-white">
+          <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+            <Link href="/login" className="text-xs text-slate-600 hover:text-slate-900 font-medium">
               Already have an account? Sign In
             </Link>
             <button
               type="submit"
-              className="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-600/25 transition-all"
+              className="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold shadow-xs shadow-indigo-600/25 transition-all"
             >
               <span>Complete Registration</span>
               <ArrowRight className="w-3.5 h-3.5" />

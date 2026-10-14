@@ -116,25 +116,25 @@ export default function NewProjectPage() {
       <div className="max-w-3xl mx-auto space-y-6 animate-in fade-in duration-300">
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Marketplace</span>
         </Link>
 
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#0F1626] border border-white/10 shadow-2xl">
-          <div className="pb-5 border-b border-white/10">
-            <h1 className="text-xl font-bold text-white tracking-tight">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-xs">
+          <div className="pb-5 border-b border-slate-200">
+            <h1 className="text-xl font-bold text-slate-900 tracking-tight">
               Create New Project Opportunity
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 mt-1">
               Define your capstone vision, required technical proficiencies, and team capacity
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-6">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Project Title *
               </label>
               <input
@@ -143,12 +143,12 @@ export default function NewProjectPage() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g. Autonomous Robotic Arm for Surgical Training"
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Description & Goals *
               </label>
               <textarea
@@ -157,19 +157,19 @@ export default function NewProjectPage() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Describe the problem, target deliverables, architecture, and what students will learn..."
-                className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 resize-none"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 resize-none font-medium leading-relaxed"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                   Category
                 </label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value as ProjectCategory)}
-                  className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 >
                   {categories.map((c) => (
                     <option key={c} value={c}>
@@ -180,7 +180,7 @@ export default function NewProjectPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                   Maximum Team Size
                 </label>
                 <input
@@ -189,14 +189,14 @@ export default function NewProjectPage() {
                   max={8}
                   value={maxTeamSize}
                   onChange={(e) => setMaxTeamSize(Number(e.target.value))}
-                  className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                   Duration
                 </label>
                 <input
@@ -204,18 +204,18 @@ export default function NewProjectPage() {
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
                   placeholder="e.g. 10 weeks"
-                  className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                   Experience Preference
                 </label>
                 <select
                   value={experiencePreference}
                   onChange={(e) => setExperiencePreference(e.target.value as any)}
-                  className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 >
                   <option value="All Levels">All Levels Welcome</option>
                   <option value="Intermediate+">Intermediate+</option>
@@ -224,25 +224,25 @@ export default function NewProjectPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                   Deadline
                 </label>
                 <input
                   type="date"
                   value={deadline}
                   onChange={(e) => setDeadline(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 />
               </div>
             </div>
 
             {/* Required Skills Builder */}
-            <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-3">
+            <div className="p-4 rounded-xl bg-slate-50/70 border border-slate-200 space-y-3">
               <div className="flex items-center justify-between">
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
                   Required Skills & Importance Weights *
                 </label>
-                <span className="text-[11px] text-indigo-400 font-mono">
+                <span className="text-[11px] text-indigo-600 font-mono font-medium">
                   Weights normalized automatically to 100%
                 </span>
               </div>
@@ -251,20 +251,20 @@ export default function NewProjectPage() {
                 {requiredSkills.map((req) => (
                   <div
                     key={req.id}
-                    className="flex items-center justify-between p-2.5 bg-white/5 rounded-lg border border-white/5 text-xs text-slate-200"
+                    className="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200 text-xs text-slate-800 shadow-xs"
                   >
-                    <div className="font-semibold text-white">{req.skillName}</div>
+                    <div className="font-semibold text-slate-900">{req.skillName}</div>
                     <div className="flex items-center gap-3">
-                      <span className="text-slate-400 text-[11px]">
-                        Weight: <strong className="text-white">{req.weight}</strong>
+                      <span className="text-slate-500 text-[11px]">
+                        Weight: <strong className="text-slate-900">{req.weight}%</strong>
                       </span>
-                      <span className="text-indigo-400 text-[11px]">
+                      <span className="text-indigo-600 font-medium text-[11px]">
                         Min Prof: {req.minimumProficiency === 1 ? "Beginner" : req.minimumProficiency === 2 ? "Intermediate" : "Advanced"}
                       </span>
                       <button
                         type="button"
                         onClick={() => handleRemoveSkill(req.id)}
-                        className="text-slate-500 hover:text-rose-400 transition-colors"
+                        className="text-slate-400 hover:text-rose-600 transition-colors"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
@@ -274,13 +274,13 @@ export default function NewProjectPage() {
               </div>
 
               {/* Add Skill Row */}
-              <div className="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+              <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200">
                 <input
                   type="text"
                   value={newSkillName}
                   onChange={(e) => setNewSkillName(e.target.value)}
                   placeholder="Skill name (e.g. PyTorch, Rust, Next.js)"
-                  className="flex-1 min-w-[160px] px-3 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                  className="flex-1 min-w-[160px] px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500"
                 />
                 <input
                   type="number"
@@ -290,12 +290,12 @@ export default function NewProjectPage() {
                   onChange={(e) => setNewSkillWeight(Number(e.target.value))}
                   placeholder="Weight"
                   title="Importance Weight"
-                  className="w-20 px-3 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="w-20 px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 />
                 <select
                   value={newSkillProf}
                   onChange={(e) => setNewSkillProf(Number(e.target.value) as SkillProficiency)}
-                  className="px-3 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
+                  className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
                 >
                   <option value={1}>Min: Beginner</option>
                   <option value={2}>Min: Intermediate</option>
@@ -304,7 +304,7 @@ export default function NewProjectPage() {
                 <button
                   type="button"
                   onClick={handleAddSkill}
-                  className="px-3 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold flex items-center gap-1"
+                  className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold flex items-center gap-1 shadow-xs"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Skill</span>
@@ -313,22 +313,22 @@ export default function NewProjectPage() {
             </div>
 
             {error && (
-              <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-400 flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 shrink-0" />
+              <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-700 flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
                 <span>{error}</span>
               </div>
             )}
 
-            <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
+            <div className="flex justify-end gap-3 pt-4 border-t border-slate-200">
               <Link
                 href="/projects"
-                className="px-4 py-2 text-xs font-semibold text-slate-400 hover:text-white bg-white/5 rounded-xl transition-colors"
+                className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
               >
                 Cancel
               </Link>
               <button
                 type="submit"
-                className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-600/25 transition-all"
+                className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold shadow-xs shadow-indigo-600/25 transition-all"
               >
                 Publish Project
               </button>

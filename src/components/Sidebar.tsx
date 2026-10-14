@@ -14,11 +14,9 @@ import {
   BarChart3,
   Settings,
   Sparkles,
-  Database,
   ChevronRight,
   Menu,
   X,
-  ExternalLink,
 } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { PersonaSwitcherModal } from "./PersonaSwitcherModal";
@@ -56,10 +54,10 @@ export function Sidebar() {
       <div className="lg:hidden fixed top-3 left-3 z-40">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="p-2.5 rounded-xl bg-[#0F1626] border border-white/10 text-slate-300 hover:text-white shadow-lg"
+          className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-slate-900 shadow-md"
           aria-label="Toggle navigation"
         >
-          {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 text-slate-700" />}
         </button>
       </div>
 
@@ -67,34 +65,34 @@ export function Sidebar() {
       {isMobileOpen && (
         <div
           onClick={() => setIsMobileOpen(false)}
-          className="lg:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-sm"
+          className="lg:hidden fixed inset-0 z-30 bg-slate-900/40 backdrop-blur-sm"
         />
       )}
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed top-0 left-0 bottom-0 z-30 w-64 bg-[#090D16] border-r border-white/10 flex flex-col transition-transform duration-200 lg:translate-x-0 ${
+        className={`fixed top-0 left-0 bottom-0 z-30 w-64 bg-white border-r border-slate-200 flex flex-col transition-transform duration-200 lg:translate-x-0 ${
           isMobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Brand Header */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between">
+        <div className="p-5 border-b border-slate-200 flex items-center justify-between">
           <Link
             href="/dashboard"
             className="flex items-center gap-2.5 group"
             onClick={() => setIsMobileOpen(false)}
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-600/30 group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-600 flex items-center justify-center shadow-md shadow-indigo-600/20 group-hover:scale-105 transition-transform">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <div className="text-base font-extrabold tracking-tight text-white flex items-center gap-1.5">
+              <div className="text-base font-extrabold tracking-tight text-slate-900 flex items-center gap-1.5">
                 SkillSync
-                <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
                   v1.0
                 </span>
               </div>
-              <p className="text-[10px] text-slate-400 font-medium tracking-tight">
+              <p className="text-[10px] text-slate-500 font-medium tracking-tight">
                 Engineering Team Matcher
               </p>
             </div>
@@ -102,19 +100,19 @@ export function Sidebar() {
         </div>
 
         {/* Storage Mode Status Pill */}
-        <div className="px-4 py-2.5 border-b border-white/5 bg-[#0B101D]">
+        <div className="px-4 py-2.5 border-b border-slate-100 bg-slate-50/70">
           <Link
             href="/settings"
             onClick={() => setIsMobileOpen(false)}
-            className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 transition-colors group"
+            className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 transition-colors group shadow-2xs"
           >
             <div className="flex items-center gap-2 text-[11px]">
-              <span className={`w-2 h-2 rounded-full ${isDemoMode ? "bg-amber-400 animate-pulse" : "bg-emerald-400"}`} />
-              <span className="text-slate-300 font-medium">
+              <span className={`w-2 h-2 rounded-full ${isDemoMode ? "bg-amber-500" : "bg-emerald-500"}`} />
+              <span className="text-slate-700 font-semibold">
                 {isDemoMode ? "Demo Mode (Local)" : "Supabase Live"}
               </span>
             </div>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-transform group-hover:translate-x-0.5" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-700 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
 
@@ -131,32 +129,32 @@ export function Sidebar() {
                 onClick={() => setIsMobileOpen(false)}
                 className={`group flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   isActive
-                    ? "bg-indigo-600/15 text-indigo-400 border border-indigo-500/30 shadow-sm"
+                    ? "bg-indigo-50 text-indigo-700 border border-indigo-200 shadow-2xs"
                     : item.highlight
-                    ? "text-slate-200 hover:text-white hover:bg-white/5 bg-gradient-to-r from-purple-500/10 to-transparent"
-                    : "text-slate-400 hover:text-slate-100 hover:bg-white/5"
+                    ? "text-slate-700 hover:text-slate-900 hover:bg-purple-50/60 bg-purple-50/30"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <Icon
                     className={`w-4 h-4 transition-colors ${
                       isActive
-                        ? "text-indigo-400"
+                        ? "text-indigo-600"
                         : item.highlight
-                        ? "text-purple-400 group-hover:text-purple-300"
-                        : "text-slate-400 group-hover:text-slate-200"
+                        ? "text-purple-600 group-hover:text-purple-700"
+                        : "text-slate-500 group-hover:text-slate-700"
                     }`}
                   />
                   <span>{item.name}</span>
                 </div>
 
                 {item.badge && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-100 text-purple-700 border border-purple-200">
                     {item.badge}
                   </span>
                 )}
                 {item.href === "/discover" && shortlistedCount > 0 && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-500 text-white">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-600 text-white">
                     {shortlistedCount}
                   </span>
                 )}
@@ -167,33 +165,33 @@ export function Sidebar() {
           {/* Quick explainability trigger */}
           <button
             onClick={() => setIsExplainModalOpen(true)}
-            className="w-full mt-3 flex items-center justify-between px-3 py-2 rounded-xl text-[11px] font-medium text-slate-400 hover:text-indigo-300 hover:bg-indigo-500/10 border border-dashed border-white/10 transition-colors"
+            className="w-full mt-3 flex items-center justify-between px-3 py-2 rounded-xl text-[11px] font-medium text-slate-600 hover:text-indigo-700 hover:bg-indigo-50/60 border border-dashed border-slate-300 transition-colors"
           >
             <span className="flex items-center gap-2">
-              <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+              <Cpu className="w-3.5 h-3.5 text-indigo-600" />
               How Matching Works
             </span>
-            <ChevronRight className="w-3 h-3 opacity-60" />
+            <ChevronRight className="w-3 h-3 opacity-60 text-slate-400" />
           </button>
         </nav>
 
         {/* Current Active Persona Widget */}
-        <div className="p-3 border-t border-white/10 bg-[#0c1220]">
-          <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
+        <div className="p-3 border-t border-slate-200 bg-slate-50/80">
+          <div className="p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400">
+              <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500">
                 Active Identity
               </span>
               <button
                 onClick={() => setIsPersonaModalOpen(true)}
-                className="text-[11px] font-semibold text-indigo-400 hover:text-indigo-300 transition-colors"
+                className="text-[11px] font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
               >
                 Switch
               </button>
             </div>
 
             <div className="flex items-center gap-2.5">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden bg-slate-800 shrink-0 border border-white/10">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden bg-slate-200 shrink-0 border border-slate-200">
                 {currentStudent.avatarUrl ? (
                   <Image
                     src={currentStudent.avatarUrl}
@@ -202,16 +200,16 @@ export function Sidebar() {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-xs font-bold text-white">
+                  <div className="w-full h-full flex items-center justify-center text-xs font-bold text-slate-700">
                     {currentStudent.fullName.charAt(0)}
                   </div>
                 )}
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-xs font-semibold text-white truncate">
+                <div className="text-xs font-bold text-slate-900 truncate">
                   {currentStudent.fullName}
                 </div>
-                <div className="text-[10px] text-slate-400 truncate">
+                <div className="text-[10px] text-slate-500 truncate">
                   {currentStudent.college}
                 </div>
               </div>

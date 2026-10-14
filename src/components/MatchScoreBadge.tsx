@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Info } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 interface MatchScoreBadgeProps {
   score: number;
@@ -15,30 +15,29 @@ export function MatchScoreBadge({
   score,
   baseScore,
   bonusScore,
-  size = "md",
   showLabel = true,
 }: MatchScoreBadgeProps) {
   const [showTooltip, setShowTooltip] = useState(false);
 
-  let colorClass = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
-  let ringColor = "stroke-emerald-400";
+  let colorClass = "text-emerald-700 bg-emerald-50 border-emerald-300";
+  let ringColor = "stroke-emerald-600";
   let label = "High Match";
 
   if (score >= 80) {
-    colorClass = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
-    ringColor = "stroke-emerald-400";
+    colorClass = "text-emerald-700 bg-emerald-50 border-emerald-300";
+    ringColor = "stroke-emerald-600";
     label = "Strong Match";
   } else if (score >= 60) {
-    colorClass = "text-indigo-400 bg-indigo-500/10 border-indigo-500/30";
-    ringColor = "stroke-indigo-400";
+    colorClass = "text-indigo-700 bg-indigo-50 border-indigo-300";
+    ringColor = "stroke-indigo-600";
     label = "Solid Match";
   } else if (score >= 40) {
-    colorClass = "text-amber-400 bg-amber-500/10 border-amber-500/30";
-    ringColor = "stroke-amber-400";
+    colorClass = "text-amber-800 bg-amber-50 border-amber-300";
+    ringColor = "stroke-amber-600";
     label = "Moderate Match";
   } else {
-    colorClass = "text-rose-400 bg-rose-500/10 border-rose-500/30";
-    ringColor = "stroke-rose-400";
+    colorClass = "text-rose-700 bg-rose-50 border-rose-300";
+    ringColor = "stroke-rose-600";
     label = "Low Match";
   }
 
@@ -61,7 +60,7 @@ export function MatchScoreBadge({
               cx="18"
               cy="18"
               r={radius}
-              className="stroke-slate-800"
+              className="stroke-slate-200"
               strokeWidth="3.5"
               fill="transparent"
             />
@@ -84,15 +83,15 @@ export function MatchScoreBadge({
 
         {showLabel && (
           <div className="text-left">
-            <span className="text-xs font-semibold block leading-tight">{score}% Match</span>
-            <span className="text-[10px] opacity-80 block">{label}</span>
+            <span className="text-xs font-bold block leading-tight">{score}% Match</span>
+            <span className="text-[10px] opacity-80 block font-medium">{label}</span>
           </div>
         )}
       </div>
 
       {showTooltip && (baseScore !== undefined || bonusScore !== undefined) && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-[#090D16] border border-white/10 rounded-xl shadow-2xl text-[11px] text-slate-300 z-50 pointer-events-none animate-in fade-in zoom-in-95">
-          <div className="font-semibold text-white flex items-center gap-1.5 pb-1 border-b border-white/5">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl text-[11px] text-slate-200 z-50 pointer-events-none animate-in fade-in zoom-in-95">
+          <div className="font-semibold text-white flex items-center gap-1.5 pb-1 border-b border-slate-800">
             <Sparkles className="w-3 h-3 text-indigo-400" />
             Compatibility Score
           </div>
@@ -109,7 +108,7 @@ export function MatchScoreBadge({
                 </span>
               </div>
             )}
-            <div className="flex justify-between pt-1 border-t border-white/5 text-white font-bold">
+            <div className="flex justify-between pt-1 border-t border-slate-800 text-white font-bold">
               <span>Overall Match:</span>
               <span className="text-indigo-400">{Math.round(score)}%</span>
             </div>

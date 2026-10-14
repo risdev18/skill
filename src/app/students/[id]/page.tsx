@@ -73,17 +73,17 @@ export default function StudentProfilePage() {
         {/* Back Link */}
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+          className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back</span>
         </button>
 
         {/* Profile Card Header */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#0F1626] border border-white/10 relative overflow-hidden">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-xs relative overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-slate-800 shrink-0 border-2 border-white/10 shadow-xl">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-slate-100 shrink-0 border-2 border-slate-200 shadow-xs">
                 {student.avatarUrl ? (
                   <Image
                     src={student.avatarUrl}
@@ -92,7 +92,7 @@ export default function StudentProfilePage() {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center font-bold text-white text-2xl">
+                  <div className="w-full h-full flex items-center justify-center font-bold text-slate-700 text-2xl">
                     {student.fullName.charAt(0)}
                   </div>
                 )}
@@ -100,41 +100,41 @@ export default function StudentProfilePage() {
 
               <div>
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
-                  <h1 className="text-2xl font-black text-white tracking-tight">
+                  <h1 className="text-2xl font-black text-slate-900 tracking-tight">
                     {student.fullName}
                   </h1>
                   {isMentor ? (
-                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-amber-400" />
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-semibold flex items-center gap-1">
+                      <Sparkles className="w-3 h-3 text-amber-600" />
                       <span>{student.userRole === "recruiter" ? "Campus Club Recruiter" : "Project Creator & Mentor"}</span>
                     </span>
                   ) : (
-                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-medium">
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">
                       {student.academicYear}
                     </span>
                   )}
                 </div>
 
                 {student.organization && (
-                  <p className="text-xs font-bold text-amber-400 mt-1 flex items-center justify-center sm:justify-start gap-1.5">
-                    <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                  <p className="text-xs font-bold text-amber-800 mt-1 flex items-center justify-center sm:justify-start gap-1.5">
+                    <Building2 className="w-3.5 h-3.5 text-amber-600" />
                     <span>{student.organization}</span>
-                    {student.roleTitle && <span className="text-slate-400 font-normal">• {student.roleTitle}</span>}
+                    {student.roleTitle && <span className="text-slate-500 font-normal">• {student.roleTitle}</span>}
                   </p>
                 )}
 
-                <p className="text-sm text-indigo-400 font-semibold mt-1">
+                <p className="text-sm text-indigo-600 font-semibold mt-1">
                   {student.department}
                 </p>
 
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400 mt-2">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-500 mt-2">
                   <span className="flex items-center gap-1.5">
-                    <Building2 className="w-3.5 h-3.5 text-slate-500" />
+                    <Building2 className="w-3.5 h-3.5 text-slate-400" />
                     {student.college}
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
+                    <Clock className="w-3.5 h-3.5 text-emerald-600" />
                     {student.availability}
                   </span>
                 </div>
@@ -146,7 +146,7 @@ export default function StudentProfilePage() {
                       href={student.portfolioUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors border border-white/5"
+                      className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 transition-colors border border-slate-200"
                       title="Portfolio"
                     >
                       <Globe className="w-4 h-4" />
@@ -157,7 +157,7 @@ export default function StudentProfilePage() {
                       href={student.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors border border-white/5"
+                      className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 transition-colors border border-slate-200"
                       title="GitHub Profile"
                     >
                       <Github className="w-4 h-4" />
@@ -168,7 +168,7 @@ export default function StudentProfilePage() {
                       href={student.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors border border-white/5"
+                      className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 transition-colors border border-slate-200"
                       title="LinkedIn"
                     >
                       <Linkedin className="w-4 h-4" />
@@ -182,8 +182,8 @@ export default function StudentProfilePage() {
               onClick={() => toggleShortlist(student.id)}
               className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold border transition-all ${
                 student.shortlisted
-                  ? "bg-indigo-600 text-white border-indigo-500 shadow-lg shadow-indigo-600/20"
-                  : "bg-white/5 text-slate-300 hover:text-white border-white/10 hover:bg-white/10"
+                  ? "bg-indigo-600 text-white border-indigo-600 shadow-xs shadow-indigo-600/20"
+                  : "bg-slate-100 text-slate-700 hover:text-slate-900 border-slate-200 hover:bg-slate-200"
               }`}
             >
               {student.shortlisted ? (
@@ -200,11 +200,11 @@ export default function StudentProfilePage() {
             </button>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-white/10">
-            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+          <div className="mt-6 pt-6 border-t border-slate-200">
+            <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
               Engineering Biography
             </h3>
-            <p className="text-sm text-slate-300 leading-relaxed max-w-3xl">
+            <p className="text-sm text-slate-700 leading-relaxed max-w-3xl">
               {student.bio}
             </p>
           </div>
@@ -212,46 +212,46 @@ export default function StudentProfilePage() {
 
         {/* Profile Middle Section: Mentor Projects OR Student Compatibility Evaluator */}
         {isMentor ? (
-          <div className="p-6 rounded-2xl bg-[#0F1626] border border-amber-500/20">
-            <div className="flex items-center justify-between pb-4 border-b border-white/10">
+          <div className="p-6 rounded-2xl bg-white border border-amber-200/90 shadow-xs">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
                 <div className="flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 text-amber-400" />
-                  <h3 className="text-base font-bold text-white tracking-tight">
+                  <Briefcase className="w-4 h-4 text-amber-600" />
+                  <h3 className="text-base font-bold text-slate-900 tracking-tight">
                     Capstone Projects Supervised & Mentored ({supervisedProjects.length})
                   </h3>
                 </div>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-500 mt-1">
                   Active capstone projects created and guided by this mentor for student teams
                 </p>
               </div>
             </div>
 
             {supervisedProjects.length === 0 ? (
-              <p className="text-xs text-slate-400 mt-4 italic">No active projects currently listed under this mentor.</p>
+              <p className="text-xs text-slate-500 mt-4 italic">No active projects currently listed under this mentor.</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                 {supervisedProjects.map((p) => (
                   <Link
                     key={p.id}
                     href={`/projects/${p.id}`}
-                    className="p-4 rounded-xl bg-black/40 border border-white/10 hover:border-amber-500/40 transition-all flex flex-col justify-between group"
+                    className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-amber-400/60 transition-all flex flex-col justify-between group"
                   >
                     <div>
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-semibold text-amber-400 uppercase tracking-wider">
+                        <span className="text-[10px] font-semibold text-amber-800 uppercase tracking-wider">
                           {p.category}
                         </span>
-                        <span className="text-[10px] text-emerald-400 font-semibold font-mono">
+                        <span className="text-[10px] text-emerald-700 font-semibold font-mono">
                           {p.openPositions !== undefined ? `${p.openPositions} Open Positions` : `${p.currentTeamSize}/${p.maxTeamSize} Members`}
                         </span>
                       </div>
-                      <h4 className="text-sm font-bold text-white mt-1.5 group-hover:text-indigo-400 transition-colors">
+                      <h4 className="text-sm font-bold text-slate-900 mt-1.5 group-hover:text-indigo-600 transition-colors">
                         {p.title}
                       </h4>
-                      <p className="text-xs text-slate-400 mt-1 line-clamp-2">{p.description}</p>
+                      <p className="text-xs text-slate-600 mt-1 line-clamp-2">{p.description}</p>
                     </div>
-                    <div className="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between text-xs text-indigo-400 font-semibold">
+                    <div className="mt-3 pt-2.5 border-t border-slate-200 flex items-center justify-between text-xs text-indigo-600 font-semibold">
                       <span>Inspect Project & Applications</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -261,16 +261,16 @@ export default function StudentProfilePage() {
             )}
           </div>
         ) : (
-          <div className="p-6 rounded-2xl bg-[#0F1626] border border-white/10">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
               <div>
                 <div className="flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-indigo-400" />
-                  <h3 className="text-base font-bold text-white tracking-tight">
+                  <Cpu className="w-4 h-4 text-indigo-600" />
+                  <h3 className="text-base font-bold text-slate-900 tracking-tight">
                     Compatibility Against Projects
                   </h3>
                 </div>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-500 mt-1">
                   Select a project opportunity to calculate how well {student.fullName} satisfies its skill requirements
                 </p>
               </div>
@@ -278,7 +278,7 @@ export default function StudentProfilePage() {
               <select
                 value={selectedProjectId}
                 onChange={(e) => setSelectedProjectId(e.target.value)}
-                className="px-3.5 py-2 bg-[#090D16] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500 font-medium"
+                className="px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-indigo-500 font-medium"
               >
                 {projects.map((p) => (
                   <option key={p.id} value={p.id}>
@@ -290,24 +290,24 @@ export default function StudentProfilePage() {
 
             {matchResult && (
               <div className="mt-5 space-y-4">
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-medium text-slate-400">Deterministic Match Score:</span>
+                      <span className="text-xs font-semibold text-slate-600">Deterministic Match Score:</span>
                       <MatchScoreBadge
                         score={matchResult.overallScore}
                         baseScore={matchResult.baseSkillScore}
                         bonusScore={matchResult.bonusScore}
                       />
                     </div>
-                    <p className="text-xs text-slate-300 mt-2 italic leading-relaxed">
+                    <p className="text-xs text-slate-700 mt-2 italic leading-relaxed">
                       &quot;{matchResult.explanation}&quot;
                     </p>
                   </div>
 
                   <Link
                     href={`/matching?project=${selectedProjectId}`}
-                    className="px-4 py-2 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 rounded-xl text-xs font-semibold border border-indigo-500/30 whitespace-nowrap text-center transition-colors"
+                    className="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-semibold border border-indigo-200 whitespace-nowrap text-center transition-colors shadow-xs"
                   >
                     Inspect in Matching Engine
                   </Link>
@@ -315,24 +315,24 @@ export default function StudentProfilePage() {
 
                 {/* Matched & Missing Breakdown */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="p-3.5 rounded-xl bg-[#090D16] border border-white/5">
-                    <div className="font-semibold text-emerald-400 flex items-center gap-1.5 mb-2">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
+                  <div className="p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-200">
+                    <div className="font-semibold text-emerald-800 flex items-center gap-1.5 mb-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                       Covered Skills ({matchResult.matchedSkills.length})
                     </div>
                     <div className="space-y-1.5">
                       {matchResult.matchedSkills.map((m) => (
-                        <div key={m.skillName} className="flex justify-between text-slate-300 text-[11px]">
+                        <div key={m.skillName} className="flex justify-between text-slate-700 text-[11px]">
                           <span>{m.skillName} (Lvl {m.studentProficiency}/{m.requiredProficiency})</span>
-                          <span className="text-emerald-400 font-mono">+{m.contribution}%</span>
+                          <span className="text-emerald-700 font-bold font-mono">+{m.contribution}%</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#090D16] border border-white/5">
-                    <div className="font-semibold text-amber-400 flex items-center gap-1.5 mb-2">
-                      <ShieldCheck className="w-3.5 h-3.5" />
+                  <div className="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200">
+                    <div className="font-semibold text-amber-800 flex items-center gap-1.5 mb-2">
+                      <ShieldCheck className="w-3.5 h-3.5 text-amber-600" />
                       Gaps / Missing ({matchResult.missingSkills.length})
                     </div>
                     <div className="space-y-1.5">
@@ -340,9 +340,9 @@ export default function StudentProfilePage() {
                         <span className="text-slate-500 text-[11px]">No skill gaps detected!</span>
                       ) : (
                         matchResult.missingSkills.map((ms) => (
-                          <div key={ms.skillName} className="flex justify-between text-slate-400 text-[11px]">
+                          <div key={ms.skillName} className="flex justify-between text-slate-700 text-[11px]">
                             <span>{ms.skillName}</span>
-                            <span className="text-rose-400 font-mono">{ms.weight}% weight</span>
+                            <span className="text-rose-600 font-semibold font-mono">{ms.weight}% weight</span>
                           </div>
                         ))
                       )}
@@ -355,27 +355,27 @@ export default function StudentProfilePage() {
         )}
 
         {/* Full Skills Showcase */}
-        <div className="p-6 rounded-2xl bg-[#0F1626] border border-white/10">
-          <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
+        <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs">
+          <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
             Declared Skills & Proficiencies
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {student.skills.map((s) => (
               <div
                 key={s.id}
-                className="p-3.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between"
+                className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between"
               >
                 <div>
-                  <div className="text-xs font-bold text-white">{s.skillName}</div>
-                  <div className="text-[10px] text-slate-400 mt-0.5">{s.category || "General"}</div>
+                  <div className="text-xs font-bold text-slate-900">{s.skillName}</div>
+                  <div className="text-[10px] text-slate-500 mt-0.5">{s.category || "General"}</div>
                 </div>
                 <span
-                  className={`text-[10px] font-semibold px-2 py-0.5 rounded-md ${
+                  className={`text-[10px] font-semibold px-2 py-0.5 rounded-md border ${
                     s.proficiency === 3
-                      ? "bg-indigo-500/20 text-indigo-300"
+                      ? "bg-indigo-50 text-indigo-700 border-indigo-200"
                       : s.proficiency === 2
-                      ? "bg-purple-500/20 text-purple-300"
-                      : "bg-slate-800 text-slate-400"
+                      ? "bg-purple-50 text-purple-700 border-purple-200"
+                      : "bg-slate-100 text-slate-600 border-slate-200"
                   }`}
                 >
                   {PROFICIENCY_LABELS[s.proficiency]}
